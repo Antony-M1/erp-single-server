@@ -9,6 +9,9 @@ This Documentation Complete about the setup the `ERPNext-13` in a single server,
 
 For Complete `Local` and `Production` setup [CLICK HERE](https://github.com/frappe/frappe_docker#custom-images)
 
+### ERP Discuss
+* [How to add custom app in production setup?](https://discuss.frappe.io/t/how-to-add-custom-app-in-production-setup/104600)
+
 # Single Server Production Setup
 We are assuming you are using linux Ubuntu 16+
 

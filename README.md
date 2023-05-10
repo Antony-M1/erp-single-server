@@ -19,17 +19,17 @@ Open the terminal in your server(PC) and run this command
 ```
 git clone https://github.com/frappe/frappe_docker
 ```
-we are assuming you have domain with the name of `zapptor.com` or some other domain for testing purpose only im giving this domain name.
+we are assuming you have domain with the name of `ziptor.com` or some other domain for testing purpose only im giving this domain name.
 
 Change The directory name `frappe_docker` to some Other name.
-For example if im hosting a site with a name `zapptor.com` change the folder name
-`frappe_docker` to `zapptor`
+For example if im hosting a site with a name `ziptor.com` change the folder name
+`frappe_docker` to `ziptor`
 
 Run this command to change the directory.
 
 **Run Command**
 ```
-sudo mv frappe_docker zapptor
+sudo mv frappe_docker ziptor
 ```
 ### STEP 2
 Create configuration and resources directory
@@ -48,19 +48,19 @@ Create a file called `traefik.env` in `~/gitops`
 
 **Run Command**
 ```
-echo 'TRAEFIK_DOMAIN=zapptor.com' > ~/gitops/traefik.env
-echo 'EMAIL=admin@zapptor.com' >> ~/gitops/traefik.env
+echo 'TRAEFIK_DOMAIN=ziptor.com' > ~/gitops/traefik.env
+echo 'EMAIL=admin@ziptor.com' >> ~/gitops/traefik.env
 echo 'HASHED_PASSWORD='$(openssl passwd -apr1 changeit | sed 's/\$/\\\$/g') >> ~/gitops/traefik.env
 ```
 Note:
 
-* Change the domain from `zapptor.com` to the one used in production. DNS entry needs to point to the Server IP.
-* Change the letsencrypt notification email from `admin@zapptor.com` to correct email.
+* Change the domain from `ziptor.com` to the one used in production. DNS entry needs to point to the Server IP.
+* Change the letsencrypt notification email from `admin@ziptor.com` to correct email.
 * Change the password from `changeit` to more secure.
 env file generated at location `~/gitops/traefik.env` will look like following:
 ```
-TRAEFIK_DOMAIN=zapptor.com
-EMAIL=admin@zapptor.com
+TRAEFIK_DOMAIN=ziptor.com
+EMAIL=admin@ziptor.com
 HASHED_PASSWORD=\$apr1\$POT9B0su\$f9WtnniQOwnPR0fUALZec.
 ```
 

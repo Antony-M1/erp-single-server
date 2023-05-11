@@ -11,6 +11,7 @@ For Complete `Local` and `Production` setup [CLICK HERE](https://github.com/frap
 
 ### ERP Discuss
 * [How to add custom app in production setup?](https://discuss.frappe.io/t/how-to-add-custom-app-in-production-setup/104600)
+* [How do I install the human resources module in a Docker setup? ERPNext-14](https://discuss.frappe.io/t/how-do-i-install-the-human-resources-module-in-a-docker-setup/102555)
 
 # Single Server Production Setup
 We are assuming you are using linux Ubuntu 16+

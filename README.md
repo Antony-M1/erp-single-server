@@ -276,14 +276,14 @@ This command uses Docker Compose to deploy and start the containers defined in t
 
 Overall, this command instructs Docker Compose to start the containers defined in the `erpnext-one.yaml` file, creating the necessary services for the ERPNext application with the project name set to `erpnext-one`.
 
-**Create sites `one.ziptor.com`:**
+**Create sites `ziptor.com`:**
 
-`one.ziptor.com`
+`ziptor.com`
 
 **Run Commans**
 ```
 docker compose --project-name erpnext-one exec backend \
-  bench new-site one.ziptor.com --no-mariadb-socket --mariadb-root-password changeit --install-app erpnext --admin-password changeit
+  bench new-site ziptor.com --no-mariadb-socket --mariadb-root-password changeit --install-app erpnext --admin-password changeit
 ```
 
 This command is used to execute a command inside a running container named `backend` in the `erpnext-one` project. Here's an explanation of each part of the command:
@@ -291,13 +291,13 @@ This command is used to execute a command inside a running container named `back
 * `docker-compose`: The command to manage multi-container Docker applications using Compose.
 * `--project-name erpnext-one`: Specifies the project name for the containers. In this case, the project name is set to `erpnext-one`.
 * `exec backend`: Executes a command within the running container named `backend`.
-* `bench new-site one.ziptor.com`: This is the command being executed inside the `backend` container. It creates a new site with the domain name `one.ziptor.com`.
+* `bench new-site ziptor.com`: This is the command being executed inside the `backend` container. It creates a new site with the domain name `ziptor.com`.
 * `--no-mariadb-socket`: Specifies not to use a Unix socket for the MariaDB database.
 * `--mariadb-root-password changeit`: Sets the root password for the MariaDB database to `changeit`. *Note: Normaly db root password will be 123. so please avoid using 123 use some secure password or strong password `(Refer STEP 4)`*
 * `--install-app erpnext`: Installs the ERPNext application on the newly created site.
 * `--admin-password changeit`: Sets the admin password for the ERPNext site to `changeit`.
 
-Overall, this command creates a new site with the domain `one.ziptor.com` using the ERPNext framework inside the `backend` container of the `erpnext-one` project. It configures the MariaDB database settings and installs the ERPNext application on the site.
+Overall, this command creates a new site with the domain `ziptor.com` using the ERPNext framework inside the `backend` container of the `erpnext-one` project. It configures the MariaDB database settings and installs the ERPNext application on the site.
 
 **Create custom domain to existing site**
 

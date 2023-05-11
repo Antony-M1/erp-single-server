@@ -192,7 +192,7 @@ In summary, this command starts the MariaDB container using the specified enviro
 
 **Create First Bench**
 
-Create first bench called `erpnext-one` with `one.ziptor.com` and `two.ziptor.com`
+Create first bench called `erpnext-one` with `ziptor.com`.
 
 Create a file called `erpnext-one.env` in `~/gitops`
 
@@ -202,7 +202,7 @@ cp example.env ~/gitops/erpnext-one.env
 sed -i 's/DB_PASSWORD=123/DB_PASSWORD=changeit/g' ~/gitops/erpnext-one.env
 sed -i 's/DB_HOST=/DB_HOST=mariadb-database/g' ~/gitops/erpnext-one.env
 sed -i 's/DB_PORT=/DB_PORT=3306/g' ~/gitops/erpnext-one.env
-sed -i 's/SITES=`erp.ziptor.com`/SITES=\`one.ziptor.com\`,\`two.ziptor.com\`/g' ~/gitops/erpnext-one.env
+sed -i 's/SITES=`erp.example.com`/SITES=\`ziptor.com\`/g' ~/gitops/erpnext-one.env
 echo 'ROUTER=erpnext-one' >> ~/gitops/erpnext-one.env
 echo "BENCH_NETWORK=erpnext-one" >> ~/gitops/erpnext-one.env
 ```
@@ -217,7 +217,7 @@ This command sequence performs a series of operations on the `example.env` file 
 
 4. `sed -i 's/DB_PORT=/DB_PORT=3306/g' ~/gitops/erpnext-one.env`: Updates the `DB_PORT` value in `erpnext-one.env` to `3306`.
 
-5. `sed -i 's/SITES=`erp.ziptor.com`/SITES=\`one.ziptor.com\`,\`two.ziptor.com\`/g' ~/gitops/erpnext-one.env`: Replaces the `SITES` value in `erpnext-one.env` from `erp.ziptor.com` to `one.ziptor.com` and `two.ziptor.com`, using backticks to escape the values.
+5. ``sed -i 's/SITES=`erp.example.com`/SITES=\`ziptor.com\`/g' ~/gitops/erpnext-one.env``: Replaces the `SITES` value in `erpnext-one.env` from `erp.example.com` to `ziptor.com`, using backticks to escape the values.
 
 6. `echo 'ROUTER=erpnext-one' >> ~/gitops/erpnext-one.env`: Appends the line `ROUTER=erpnext-one` to the end of `erpnext-one.env` file.
 

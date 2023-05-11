@@ -13,6 +13,62 @@ For Complete `Local` and `Production` setup [CLICK HERE](https://github.com/frap
 * [How to add custom app in production setup?](https://discuss.frappe.io/t/how-to-add-custom-app-in-production-setup/104600)
 * [How do I install the human resources module in a Docker setup? ERPNext-14](https://discuss.frappe.io/t/how-do-i-install-the-human-resources-module-in-a-docker-setup/102555)
 
+# Custom App
+If you have a `Custom App` follow this setup before start the **Single Server Production Setup**. For the offical Documentation of [Custom App](https://github.com/frappe/frappe_docker/blob/main/docs/custom-apps.md)
+ ### Load custom apps through json
+ `apps.json` needs to be passed in as build arg environment variable.
+```
+export APPS_JSON='[
+  {
+    "url": "https://github.com/frappe/payments",
+    "branch": "develop"
+  },
+  {
+    "url": "https://github.com/frappe/erpnext",
+    "branch": "version-14"
+  },
+  {
+    "url": "https://user:password@git.example.com/project/repository.git",
+    "branch": "main"
+  }
+]'
+export APPS_JSON_BASE64=$(echo ${APPS_JSON} | base64 -w 0)
+```
+The given commands are used to assign values to environment variables in the Linux terminal. Let's break down what each command does:
+
+1. `export APPS_JSON='[ ... ]'`:
+   This command assigns a JSON-formatted string to the `APPS_JSON` environment variable. The JSON represents an array of objects, each containing a URL and a branch name.
+
+2. `export APPS_JSON_BASE64=$(echo ${APPS_JSON} | base64 -w 0)`:
+   This command takes the value of the `APPS_JSON` variable, encodes it in Base64 format, and assigns the encoded value to the `APPS_JSON_BASE64` environment variable.
+
+   Here's a step-by-step explanation of what's happening in this command:
+   - `echo ${APPS_JSON}`: The `echo` command outputs the value of `APPS_JSON`.
+   - `|`: This is a pipe symbol, which allows the output of one command to be used as the input for another.
+   - `base64 -w 0`: The `base64` command is used to encode the input in Base64 format. The `-w 0` option prevents line wrapping, ensuring that the output is a single line of Base64-encoded text.
+   - `$( ... )`: This is command substitution, where the output of the enclosed command is substituted into the outer command.
+
+So, the second command takes the JSON string stored in `APPS_JSON`, passes it to `echo`, and then pipes the output to `base64` for encoding. The resulting Base64-encoded string is assigned to the `APPS_JSON_BASE64` environment variable.
+
+This kind of encoding is commonly used when you need to pass complex or multi-line data as an environment variable, as some tools or systems may have limitations on handling certain characters or line breaks. By encoding the data in Base64, you ensure it can be safely stored and processed.
+
+**You can also generate base64 string from json file:**
+```
+export APPS_JSON_BASE64=$(base64 -w 0 /path/to/apps.json)
+```
+Note: Before running this command make sure you have pulled the `frappe_docker` from this repo.
+```
+git clone https://github.com/frappe/frappe_docker
+cd frappe_docker
+```
+In side the frappe docker if nevigate in to the `development` folder you can find the `apps-example.json` file you can create a one more file with the name of `app.json` and add all your `custom app` in that.
+
+Note:
+
+* url needs to be `http(s)` git url with `token/auth` in case of `private` repo.
+* add dependencies manually in `apps.json` e.g. add `payments` if you are installing `erpnext`
+* use fork repo or branch for `ERPNext` in case you need to use your fork or test a PR.
+
 # Single Server Production Setup
 We are assuming you are using linux Ubuntu 16+
 

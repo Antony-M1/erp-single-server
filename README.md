@@ -69,6 +69,37 @@ Note:
 * add dependencies manually in `apps.json` e.g. add `payments` if you are installing `erpnext`
 * use fork repo or branch for `ERPNext` in case you need to use your fork or test a PR.
 
+**Example for ERPNext-13**
+
+**Run All The Commands**
+```
+git clone https://github.com/frappe/frappe_docker && cd frappe_docker
+```
+```
+export APPS_JSON='[
+  {
+    "url": "https://github.com/frappe/erpnext",
+    "branch": "v13.50.2"
+  },
+  {
+    "url": "https://access_token@github.com/my-github/custom_app",
+    "branch": "main"
+  }
+]'
+```
+```
+export APPS_JSON_BASE64=$(echo ${APPS_JSON} | base64 -w 0)
+```
+```
+docker build \
+  --build-arg=FRAPPE_PATH=https://github.com/frappe/frappe \
+  --build-arg=FRAPPE_BRANCH=v13.56.2 \
+  --build-arg=PYTHON_VERSION=3.9.9 \
+  --build-arg=NODE_VERSION=14.19.3 \
+  --build-arg=APPS_JSON_BASE64=$APPS_JSON_BASE64 \
+  --tag=custom/app:1.0.0 \
+  --file=images/custom/Containerfile .
+```
 # Single Server Production Setup
 We are assuming you are using linux Ubuntu 16+
 

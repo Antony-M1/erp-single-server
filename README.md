@@ -100,6 +100,26 @@ docker build \
   --tag=custom/app:1.0.0 \
   --file=images/custom/Containerfile .
 ```
+
+The given command is used to build a Docker image using a specific Dockerfile (`Containerfile`) with various build arguments and tags. Let's break down the command and explain each part:
+
+- `docker build`: This is the Docker command used to build an image.
+
+- `--build-arg`: This option is used to set build-time variables. In this command, there are several `--build-arg` flags used to set different build arguments:
+  - `FRAPPE_PATH`: Specifies the GitHub repository URL for the Frappe framework.
+  - `FRAPPE_BRANCH`: Specifies the branch/tag of the Frappe framework to be used.
+  - `PYTHON_VERSION`: Specifies the version of Python to be installed in the image.
+  - `NODE_VERSION`: Specifies the version of Node.js to be installed in the image.
+  - `APPS_JSON_BASE64`: Specifies the base64-encoded value of the `APPS_JSON` variable.
+
+- `--tag`: Specifies the name and tag for the built image. In this case, the image will be tagged as `custom/app:1.0.0`.
+
+- `--file`: Specifies the path to the Dockerfile to be used for building the image. In this command, the Dockerfile is located at `images/custom/Containerfile` relative to the current directory.
+
+- `.`: Specifies the build context, which is the current directory where the `docker build` command is executed. The contents of this directory and its subdirectories will be sent to the Docker daemon for building the image.
+
+Overall, this command builds a Docker image using the specified Dockerfile and build arguments, and tags it with a custom name and version.
+
 # Single Server Production Setup
 We are assuming you are using linux Ubuntu 16+
 

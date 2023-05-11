@@ -206,7 +206,6 @@ sed -i 's/SITES=`erp.example.com`/SITES=\`ziptor.com\`/g' ~/gitops/erpnext-one.e
 echo 'ROUTER=erpnext-one' >> ~/gitops/erpnext-one.env
 echo "BENCH_NETWORK=erpnext-one" >> ~/gitops/erpnext-one.env
 ```
-
 This command sequence performs a series of operations on the `example.env` file and creates a new file `erpnext-one.env` with modified configurations. Here's an explanation of each step:
 
 1. `cp example.env ~/gitops/erpnext-one.env`: Copies the contents of the `ziptor.env` file to a new file named `erpnext-one.env` in the `~/gitops` directory.

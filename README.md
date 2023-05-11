@@ -232,6 +232,21 @@ env file is generated at location `~/gitops/erpnext-one.env`.
 
 Create a yaml file called `erpnext-one.yaml` in `~/gitops` directory:
 
+**Change The ERPNext Version**
+By default the erpnext version is `ERPNEXT_VERSION=v14.24.0` *(Note: the documentation created at `2023-May-11`)* to check the version. Open another terminal navigate into the `gitops` folder using this command.
+```
+cd ~/gitops/
+```
+After view the file using this command
+```
+cat erpnext-one.env
+```
+You can Find `ERPNEXT_VERSION`. if you want you can change mannually or else use this command.
+```
+sed -i 's/ERPNEXT_VERSION=v14.24.0/ERPNEXT_VERSION=v13.50.1/g' ~/gitops/erpnext-one.env
+```
+*⚠️ Note⚠️ : Before proceed the another command make sure everything is changed*
+
 **Run Command**
 ```
 docker compose --project-name erpnext-one \

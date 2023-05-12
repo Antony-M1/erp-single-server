@@ -97,7 +97,7 @@ docker build \
   --build-arg=PYTHON_VERSION=3.9.9 \
   --build-arg=NODE_VERSION=14.19.3 \
   --build-arg=APPS_JSON_BASE64=$APPS_JSON_BASE64 \
-  --tag=custom/app:1.0.0 \
+  --tag=customapp:1.0.0 \
   --file=images/custom/Containerfile .
 ```
 
@@ -119,6 +119,13 @@ The given command is used to build a Docker image using a specific Dockerfile (`
 - `.`: Specifies the build context, which is the current directory where the `docker build` command is executed. The contents of this directory and its subdirectories will be sent to the Docker daemon for building the image.
 
 Overall, this command builds a Docker image using the specified Dockerfile and build arguments, and tags it with a custom name and version.
+
+After taking the build add this line `compose.yaml` file
+```
+x-customizable-image: &customizable_image
+  image: customapp:1.0.0
+  pull_policy: never
+```
 
 # Single Server Production Setup
 We are assuming you are using linux Ubuntu 16+
@@ -354,3 +361,54 @@ Overall, this command creates a new site with the domain `ziptor.com` using the 
 
 But here you have to notice something. the sechedular is `disabled`
 ![image](https://github.com/Antony-M1/erp-single-server/assets/96291963/92c270e7-9fcf-48a6-8448-606e89792f7c)
+
+And more over my `Custom ERPNext App` also not installed. assume that my Custom App Name is `custom_erpnext`.
+
+To check all these containers has your `custom_erpnext` to check that use this command
+
+**List of Containers**
+```
+erpnext-one-frontend-1
+erpnext-one-backend-1
+erpnext-one-queue-short-1
+erpnext-one-scheduler-1
+erpnext-one-websocket-1
+erpnext-one-queue-long-1
+erpnext-one-queue-default-1
+```
+
+Use this command to check in all these containers your custom app installed. **If your not using custom app please ignore this**
+```
+docker exec -it <CONTAINER_NAME> bash
+```
+
+`example`
+```
+docker exec -it erpnext-one-frontend-1 bash
+```
+
+Before enable the `sedulare` if you have back database restore it.
+
+# Backup Restore
+
+Navigate into the backend container
+```
+docker exec -it erpnext-one-backend-1 bash
+```
+
+### Restore
+Move the db back file `inside the container`
+```
+docker cp /path/to/source/file container_name:/path/inside/container/destination/file
+```
+
+`example`
+```
+docker cp /home/$USER/Downloads/my-db-backup.gz erpnext-one-backend-1:/home/frappe/frappe-bench
+```
+Then restore the db.
+```
+bench restore --site <SITE_NAME> path/to/.sql.gz
+```
+Note:
+   * Change the `path/to/.sql.gz` into correct db file path. the file end with `.sql.gz` extention

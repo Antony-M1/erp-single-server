@@ -350,41 +350,4 @@ This command is used to execute a command inside a running container named `back
 
 Overall, this command creates a new site with the domain `ziptor.com` using the ERPNext framework inside the `backend` container of the `erpnext-one` project. It configures the MariaDB database settings and installs the ERPNext application on the site.
 
-**Create custom domain to existing site**
-
-In case you need to point` custom domain` to existing site follow these steps. Also useful if custom domain is required for LAN based access.
-
-**Create environment file**
-```
-echo "ROUTER=custom-one-example" > ~/gitops/custom-one-example.env
-echo "SITES=\`custom-one.ziptor.com\`" >> ~/gitops/custom-one-example.env
-echo "BASE_SITE=one.ziptor.com" >> ~/gitops/custom-one-example.env
-echo "BENCH_NETWORK=erpnext-one" >> ~/gitops/custom-one-example.env
-```
-
-Note:
-
-* Change the file name from `custom-one-example.env` to a logical one.
-* Change `ROUTER` variable from `custom-one.ziptor.com` to the one being added.
-* Change `SITES` variable from `custom-one.ziptor.com` to the one being added.  You can add multiple sites quoted in backtick (`) and separated by commas.
-* Change `BASE_SITE` variable from `one.ziptor.com` to the one which is being pointed to.
-* Change `BENCH_NETWORK` variable from `erpnext-one` to the one which was created with the bench.
-
-env file is generated at location mentioned in command.
-
-**Generate yaml to reverse proxy:**
-```
-docker compose --project-name custom-one-example \
-  --env-file ~/gitops/custom-one-example.env \
-  -f overrides/compose.custom-domain.yaml \
-  -f overrides/compose.custom-domain-ssl.yaml config > ~/gitops/custom-one-example.yaml
-```
-
-For LAN setup do not override `compose.custom-domain-ssl.yaml`.
-
-**Deploy `erpnext-two` containers:**
-```
-docker compose --project-name custom-one-example -f ~/gitops/custom-one-example.yaml up -d
-```
-
-Refer This [Site Operations](https://github.com/frappe/frappe_docker/blob/main/docs/site-operations.md)
+`--------------------------------------------SET UP DONE-------------------------------------------------`

@@ -120,6 +120,8 @@ The given command is used to build a Docker image using a specific Dockerfile (`
 
 Overall, this command builds a Docker image using the specified Dockerfile and build arguments, and tags it with a custom name and version.
 
+*⚠️Note⚠️: after taking the build if you want to update the code add `--no-cache` after the `dcoker build`*
+
 After taking the build add this line `compose.yaml` file
 ```
 x-customizable-image: &customizable_image
@@ -409,7 +411,7 @@ docker cp /path/to/source/file container_name:/path/inside/container/destination
 ```
 docker cp /home/$USER/Downloads/my-db-backup.gz erpnext-one-backend-1:/home/frappe/frappe-bench
 ```
-Then restore the db.
+Then restore the db. Usually it will take 30 - 60 min depends on the db weight.
 ```
 bench restore --site <SITE_NAME> path/to/.sql.gz
 ```

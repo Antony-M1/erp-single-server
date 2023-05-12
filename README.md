@@ -127,6 +127,7 @@ x-customizable-image: &customizable_image
   pull_policy: never
 ```
 
+
 # Single Server Production Setup
 We are assuming you are using linux Ubuntu 16+
 
@@ -412,3 +413,12 @@ bench restore --site <SITE_NAME> path/to/.sql.gz
 ```
 Note:
    * Change the `path/to/.sql.gz` into correct db file path. the file end with `.sql.gz` extention
+
+# Migrate site
+Note:
+
+Wait for the db service to start and `configurator` to exit before trying to migrate a site. Usually this takes up to 10 seconds.
+```
+docker-compose exec erpnext-one-backend-1 bench --site <site-name> migrate
+```
+For More about site configuration reach out this [Site Operations](https://github.com/frappe/frappe_docker/blob/main/docs/site-operations.md)

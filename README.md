@@ -126,6 +126,8 @@ x-customizable-image: &customizable_image
   image: customapp:1.0.0
   pull_policy: never
 ```
+![image](https://github.com/Antony-M1/erp-single-server/assets/96291963/03ec2ea8-4fdc-4fdf-949a-4e249d59e071)
+
 
 
 # Single Server Production Setup

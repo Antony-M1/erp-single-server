@@ -350,4 +350,4 @@ This command is used to execute a command inside a running container named `back
 
 Overall, this command creates a new site with the domain `ziptor.com` using the ERPNext framework inside the `backend` container of the `erpnext-one` project. It configures the MariaDB database settings and installs the ERPNext application on the site.
 
-`--------------------------------------------SET UP DONE-------------------------------------------------`
+`----------------------------------------🔥SET UP DONE🔥--------------------------------------------`

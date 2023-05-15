@@ -426,3 +426,6 @@ Wait for the db service to start and `configurator` to exit before trying to mig
 docker-compose exec erpnext-one-backend-1 bench --site <site-name> migrate
 ```
 For More about site configuration reach out this [Site Operations](https://github.com/frappe/frappe_docker/blob/main/docs/site-operations.md)
+
+# Mariadb Configuration
+This part is used to increase the performance of the `mariadb` It's not necessary to do if You want you can use [Follow Me](https://github.com/Antony-M1/erp-single-server/blob/main/mariadb/mariadb-cnf.md)

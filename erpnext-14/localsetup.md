@@ -57,16 +57,40 @@ bench --site mysite.localhost clear-cache
 ```
 
 ### Step 8
-```
-bench get-app --branch version-12 https://github.com/myusername/myapp
-bench --site mysite.localhost install-app myapp
-```
-
-### Step 9
+Install The `erpnext-14`
 ```
 bench get-app --branch version-14 --resolve-deps erpnext
 bench --site mysite.localhost install-app erpnext
 ```
+
+### Step 9
+Install `hrms` moduele
+```
+bench get-app --branch version-14 hrms
+bench --site mysite.localhost install-app hrms
+```
+
+### Step 10
+Install `Payments` module
+```
+bench get-app --branch version-14 payments
+bench --site ss-erp14.localhost install-app payments
+```
+
+### Step 11
+If you want you can install this module it's `non_profit` module.
+Better you can avoid if your not using it. 
+```
+bench get-app non_profit
+bench --site mysite.com install-app non_profit
+```
+
+### Step 12
+```
+bench get-app --branch version-12 https://github.com/myusername/myapp
+bench --site mysite.localhost install-app myapp
+```
+*Note: In your case the custom app branch will vary so please change the respective branch*
 
 ### Start Project
 ```

@@ -86,6 +86,7 @@ bench --site mysite.com install-app non_profit
 ```
 
 ### Step 12
+Install Your `Custom App`
 ```
 bench get-app --branch version-12 https://github.com/myusername/myapp
 bench --site mysite.localhost install-app myapp

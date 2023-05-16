@@ -393,6 +393,10 @@ docker exec -it erpnext-one-frontend-1 bash
 ```
 
 Before enable the `sedulare` if you have back database restore it.
+**Enable Schedular**
+```
+bench --site ziptor.com enable-scheduler
+```
 
 # Backup Restore
 

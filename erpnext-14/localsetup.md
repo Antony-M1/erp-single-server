@@ -74,7 +74,7 @@ bench --site mysite.localhost install-app hrms
 Install `Payments` module
 ```
 bench get-app --branch version-14 payments
-bench --site ss-erp14.localhost install-app payments
+bench --site mysite.localhost install-app payments
 ```
 
 ### Step 11
@@ -86,7 +86,7 @@ bench --site mysite.com install-app non_profit
 ```
 
 ### Step 12
-Install Your `Custom App`
+Install Your `Custom App`. If you want to install the dependencies use this arg --resolve-deps
 ```
 bench get-app --branch version-12 https://github.com/myusername/myapp
 bench --site mysite.localhost install-app myapp

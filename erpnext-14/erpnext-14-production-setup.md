@@ -2,6 +2,8 @@
 
 In this Setup we assume that you have the `Custom App` and you are using `mariadb` and `OS` is `Ubuntu 18+`.
 
+**ERP Discuss**
+* [ERPNext-14 Production Setup, Custom Image Issue?](https://discuss.frappe.io/t/erpnext-14-production-setup-custom-image-issue/104947)
 
 ## Step 1:
 Load the `Custom App` and other apps are `hrms` & `payments` module.
@@ -53,6 +55,14 @@ export APPS_JSON='[
 export APPS_JSON_BASE64=$(echo ${APPS_JSON} | base64 -w 0)
 ```
 
+After taking your `custom image` change the `compose.yaml` file
+```
+x-customizable-image: &customizable_image
+  image: customapp:1.0.0
+  pull_policy: never
+```
+![compose](https://user-images.githubusercontent.com/96291963/237895182-03ec2ea8-4fdc-4fdf-949a-4e249d59e071.png)
+
 **Run Command**
 ```
 docker build \
@@ -78,13 +88,7 @@ docker build --no-cache \
   --file=images/custom/Containerfile .
 ```
 
-After taking your `custom image` change the `compose.yaml` file
-```
-x-customizable-image: &customizable_image
-  image: customapp:1.0.0
-  pull_policy: never
-```
-![compose](https://user-images.githubusercontent.com/96291963/237895182-03ec2ea8-4fdc-4fdf-949a-4e249d59e071.png)
+
 
 ## Step 2:
 Create configuration and resources directory
@@ -151,6 +155,18 @@ sed -i 's/DB_PORT=/DB_PORT=3306/g' ~/gitops/erpnext-one.env
 sed -i 's/SITES=`erp.example.com`/SITES=\`ziptor.com\`/g' ~/gitops/erpnext-one.env
 echo 'ROUTER=erpnext-one' >> ~/gitops/erpnext-one.env
 echo "BENCH_NETWORK=erpnext-one" >> ~/gitops/erpnext-one.env
+```
+
+**Create erpnext-one.yaml**
+
+**Run Command**
+```
+docker compose --project-name erpnext-one \
+  --env-file ~/gitops/erpnext-one.env \
+  -f compose.yaml \
+  -f overrides/compose.redis.yaml \
+  -f overrides/compose.multi-bench.yaml \
+  -f overrides/compose.multi-bench-ssl.yaml config > ~/gitops/erpnext-one.yaml
 ```
 
 **Deploy erpnext-one containers:**

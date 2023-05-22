@@ -433,3 +433,11 @@ For More about site configuration reach out this [Site Operations](https://githu
 
 # Mariadb Configuration
 This part is used to increase the performance of the `mariadb` It's not necessary to do if You want you can use [Follow Me](https://github.com/Antony-M1/erp-single-server/blob/main/mariadb/mariadb-cnf.md)
+
+# Scalable Command
+To Increase the performance of the ERPNext im using this command.
+
+```
+docker compose --project-name erpnext-one -f ~/gitops/erpnext-one.yaml up -d --scale backend=6
+```
+This command will scal the backend servise `6 times` more.

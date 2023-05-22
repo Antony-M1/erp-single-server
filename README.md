@@ -13,6 +13,9 @@ For Complete `Local` and `Production` setup [CLICK HERE](https://github.com/frap
 * [How to add custom app in production setup?](https://discuss.frappe.io/t/how-to-add-custom-app-in-production-setup/104600)
 * [How do I install the human resources module in a Docker setup? ERPNext-14](https://discuss.frappe.io/t/how-do-i-install-the-human-resources-module-in-a-docker-setup/102555)
 
+### Scalling
+* [ERPNext Scalling Documentation PDF](https://erpnext.com/files/Scaling%20ERPNext.pdf)
+
 # Custom App
 If you have a `Custom App` follow this setup before start the **Single Server Production Setup**. For the offical Documentation of [Custom App](https://github.com/frappe/frappe_docker/blob/main/docs/custom-apps.md)
  ### Load custom apps through json

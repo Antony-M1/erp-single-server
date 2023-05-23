@@ -438,7 +438,7 @@ For More about site configuration reach out this [Site Operations](https://githu
 This part is used to increase the performance of the `mariadb` It's not necessary to do if You want you can use [Follow Me](https://github.com/Antony-M1/erp-single-server/blob/main/mariadb/mariadb-cnf.md)
 
 # Scalable Command
-To Increase the performance of the ERPNext im using this command.
+To Increase the performance of the ERPNext im using this command. After Creating the site and done the migration you can run this command to increase the efficiency.
 
 ```
 docker compose --project-name erpnext-one -f ~/gitops/erpnext-one.yaml up -d --scale backend=6

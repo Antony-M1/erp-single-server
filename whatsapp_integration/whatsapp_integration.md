@@ -11,3 +11,4 @@ Click **Continue** you will navigated to the next page
 ### Step 2
 In this Page enter the number and click `Send Verification SMS`
 
+![image](https://github.com/Antony-M1/erp-single-server/assets/96291963/b33fcdab-d74f-40ae-be52-02d6c901a8a0)

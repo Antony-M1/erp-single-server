@@ -27,3 +27,34 @@ Which of the following best describes you?
 After Completing the all the steps you will be navigate to this page.
 ![image](https://github.com/Antony-M1/erp-single-server/assets/96291963/5bfc9cb7-1fcc-42c0-a949-303680469d99)
 
+### Step 5
+Click the `Create App`
+![image](https://github.com/Antony-M1/erp-single-server/assets/96291963/ccfa4a04-e65d-4983-ae81-b16bbb50ac85)
+
+### Step 6
+Which use case do you want to add to your app? Slect the `FaceBook` and click the `Next`
+![image](https://github.com/Antony-M1/erp-single-server/assets/96291963/552fe31b-9fa2-4eb5-8c90-61478a9a927a)
+
+### Step 7
+Which platform will you use for your app? Slect `all` and click `Next` 
+![image](https://github.com/Antony-M1/erp-single-server/assets/96291963/1fec8b2b-8a52-407a-9925-9dd59f185143)
+
+### Step 8
+Add an app name, fill all the data and and Click `Create App`
+![image](https://github.com/Antony-M1/erp-single-server/assets/96291963/1e51d0c9-dab3-479b-aa9e-c5042fb5f837)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

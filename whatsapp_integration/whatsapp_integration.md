@@ -43,6 +43,11 @@ Which platform will you use for your app? Slect `all` and click `Next`
 Add an app name, fill all the data and and Click `Create App`
 ![image](https://github.com/Antony-M1/erp-single-server/assets/96291963/1e51d0c9-dab3-479b-aa9e-c5042fb5f837)
 
+After clicking the `Create APP` it will ask the FaceBook Password. enter the password and hit the `Enter` key.
+
+### Step 9
+You Will be landed in this page read all the. details
+![image](https://github.com/Antony-M1/erp-single-server/assets/96291963/e856f602-d0e7-4afe-86f1-a39c8846d7c4)
 
 
 

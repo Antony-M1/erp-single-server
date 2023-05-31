@@ -15,6 +15,7 @@ For Complete `Local` and `Production` setup [CLICK HERE](https://github.com/frap
 
 ### Scalling
 * [ERPNext Scalling Documentation PDF](https://erpnext.com/files/Scaling%20ERPNext.pdf)
+* [How to use Two Database container in ERPnext-14](https://discuss.frappe.io/t/how-to-use-two-database-container-in-erpnext-14/105190)
 
 # Custom App
 If you have a `Custom App` follow this setup before start the **Single Server Production Setup**. For the offical Documentation of [Custom App](https://github.com/frappe/frappe_docker/blob/main/docs/custom-apps.md)

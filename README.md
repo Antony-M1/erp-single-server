@@ -12,6 +12,7 @@ For Complete `Local` and `Production` setup [CLICK HERE](https://github.com/frap
 ### ERP Discuss
 * [How to add custom app in production setup?](https://discuss.frappe.io/t/how-to-add-custom-app-in-production-setup/104600)
 * [How do I install the human resources module in a Docker setup? ERPNext-14](https://discuss.frappe.io/t/how-do-i-install-the-human-resources-module-in-a-docker-setup/102555)
+* [Moving ERPNext-13 to ERPNext-14 is a good idea?](https://discuss.frappe.io/t/moving-erpnext-13-to-erpnext-14-is-a-good-idea/105785)
 
 ### Scalling
 * [ERPNext Scalling Documentation PDF](https://erpnext.com/files/Scaling%20ERPNext.pdf)

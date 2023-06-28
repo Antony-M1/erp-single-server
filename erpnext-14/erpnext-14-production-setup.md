@@ -43,11 +43,16 @@ export APPS_JSON='[
     "branch": "version-14"
   },
   {
+    "url": "https://github.com/resilient-tech/india-compliance",
+    "branch": "version-14"
+  },
+  {
     "url": "https://access_token@github.com/my-github/custom_app",
     "branch": "main"
   }
 ]'
 ```
+
 *Note: change your custom app repo link and access_token and respective branch*
 
 **Run Command**

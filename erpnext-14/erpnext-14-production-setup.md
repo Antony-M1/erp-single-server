@@ -32,7 +32,7 @@ cd ziptor
 export APPS_JSON='[
   {
     "url": "https://github.com/frappe/erpnext",
-    "branch": "v14.24.1"
+    "branch": "v14.27.13"
   },
   {
     "url": "https://github.com/frappe/hrms",

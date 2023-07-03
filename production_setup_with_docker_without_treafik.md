@@ -20,10 +20,24 @@ In this section, we are going to see how to setup,  the `production` setup `With
 
 If you have the `Custom App` add below
 
+`frappe` app is automatically added when you install the `bench` no need to mention below `APPS_JSON`
+
 ```
 export APPS_JSON='[
   {
     "url": "https://github.com/frappe/erpnext",
+    "branch": "version-14"
+  },
+  {
+    "url": "https://github.com/frappe/hrms",
+    "branch": "version-14"
+  },
+  {
+    "url": "https://github.com/frappe/payments",
+    "branch": "version-14"
+  },
+  {
+    "url": "https://github.com/resilient-tech/india-compliance",
     "branch": "version-14"
   },
   {
@@ -36,3 +50,8 @@ export APPS_JSON='[
 ```
 export APPS_JSON_BASE64=$(echo ${APPS_JSON} | base64 -w 0)
 ```
+
+### Step 2:
+Start the `mariadb`
+
+

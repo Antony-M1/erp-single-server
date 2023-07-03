@@ -62,7 +62,7 @@ x-customizable-image: &customizable_image
 docker build \
   --build-arg=FRAPPE_PATH=https://github.com/frappe/frappe \
   --build-arg=FRAPPE_BRANCH=v14.40.1 \
-  --build-arg=PYTHON_VERSION=3.10.5 \
+  --build-arg=PYTHON_VERSION=3.10.12 \
   --build-arg=NODE_VERSION=16.16.0 \
   --build-arg=APPS_JSON_BASE64=$APPS_JSON_BASE64 \
   --tag=customapp:1.0.0 \

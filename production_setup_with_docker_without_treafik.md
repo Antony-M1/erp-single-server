@@ -145,3 +145,13 @@ docker compose --project-name erpnext-one exec backend \
   --admin-password admin
 
 ```
+
+Make sure you installed all apps to check that run this command in the `backend container`
+
+```
+docker exec -it erpnext-one-backend-1 bash
+```
+List all the installed apps
+```
+bench list-apps 
+```

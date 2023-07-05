@@ -153,5 +153,8 @@ docker exec -it erpnext-one-backend-1 bash
 ```
 List all the installed apps
 ```
+bench use ziptor.com
+```
+```
 bench list-apps 
 ```

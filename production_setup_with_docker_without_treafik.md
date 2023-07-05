@@ -8,6 +8,11 @@ In this section, we are going to see how to setup,  the `production` setup `With
 
 # Get Started
 ### Step 1
+**Clone frappe_docker**
+```
+git clone https://github.com/frappe/frappe_docker.git
+cd frappe_docker
+```
 **Custom App**
 
 **List Of Core Apps**

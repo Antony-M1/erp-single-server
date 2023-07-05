@@ -130,7 +130,7 @@ Site Password: `admin`
 docker compose --project-name erpnext-one exec backend \
   bench new-site ziptor.com --no-mariadb-socket --mariadb-root-password admin --install-app erpnext --admin-password admin
 ```
-![image](https://github.com/Antony-M1/erp-single-server/assets/96291963/b6ebff94-d163-4abc-b3b4-86c7f68de09f)
+![image](https://github.com/Antony-M1/erp-single-server/assets/96291963/ffc91cc2-e6fb-4f3c-934e-0ff8051ea8e0)
 
 
 `OR`

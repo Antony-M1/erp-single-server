@@ -125,7 +125,21 @@ DB Password: `admin`
 
 Site Password: `admin`
 
+*Note: this command only install `frappe` and `erpnext` after that you have to inspect the container and install the apps like this inspecting container `docker exec -it <BACKEND_CONTAINER_NAME> bash` after that run this command `bench use ziptor.com` after that `bench install-app <OTHER_APPS>`*
 ```
 docker compose --project-name erpnext-one exec backend \
   bench new-site ziptor.com --no-mariadb-socket --mariadb-root-password admin --install-app erpnext --admin-password admin
+```
+
+`OR`
+
+If you want to install in `single shot` try this
+```
+docker compose --project-name erpnext-one exec backend \
+  bench new-site ziptor.com \
+  --no-mariadb-socket \
+  --mariadb-root-password admin \
+  --install-app erpnext,hrms,payments,indian_complianc \
+  --admin-password admin
+
 ```

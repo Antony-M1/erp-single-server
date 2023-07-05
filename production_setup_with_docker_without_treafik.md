@@ -141,7 +141,7 @@ docker compose --project-name erpnext-one exec backend \
   bench new-site ziptor.com \
   --no-mariadb-socket \
   --mariadb-root-password admin \
-  --install-app erpnext,hrms,payments,indian_complianc \
+  --install-app erpnext,hrms,payments,india_complianc \
   --admin-password admin
 
 ```
@@ -157,4 +157,15 @@ bench use ziptor.com
 ```
 ```
 bench list-apps 
+```
+
+If you can see all the apps it means you installed perfectly. otherwise, install the other apps
+```
+bench install-app hrms
+```
+```
+bench install-app payments
+```
+```
+bench install-app india_complianc
 ```

@@ -74,6 +74,9 @@ docker build \
 Start the `mariadb`
 
 DB Password: `admin`
+```
+mkdir ~/gitops
+```
 
 ```
 echo "DB_PASSWORD=admin" > ~/gitops/mariadb.env

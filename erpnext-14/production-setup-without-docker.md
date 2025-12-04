@@ -10,3 +10,4 @@ ERPNext-14 Setup without Docker
 **Reference**
 1. [[Guide] How to install ERPNext v14 on Linux Ubuntu (step-by-step instructions)](https://discuss.frappe.io/t/guide-how-to-install-erpnext-v14-on-linux-ubuntu-step-by-step-instructions/92960)
 2. [[Guide] How to install ERPNext v15 on Linux Ubuntu (step-by-step instructions)](https://discuss.frappe.io/t/guide-how-to-install-erpnext-v15-on-linux-ubuntu-step-by-step-instructions/111706)
+3. [D-CodeE](https://github.com/D-codE-Hub/ERPNext-installation-Guide)

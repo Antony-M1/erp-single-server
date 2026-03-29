@@ -73,3 +73,8 @@ Traceback (most recent call last):
 frappe.exceptions.QueryTimeoutError: (1205, 'Lock wait timeout exceeded; try restarting transaction')
 
 ```
+
+# Local Mariadb container fix.
+
+For my local-setup im getting this issue i don this fix.
+

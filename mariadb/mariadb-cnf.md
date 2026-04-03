@@ -15,7 +15,7 @@ Open the `frappe_docker` or `ziptor` directory using this command in `VS-Code` o
 code .
 ```
 
-Create a directory using this command
+Create a directory using this command inside the `.devcontainer` folder
 ```
 mkdir mariadb-cnf
 cd mariadb-cnf
@@ -143,3 +143,27 @@ innodb_buffer_pool_size = 10G
 # use this group for options that older servers don't understand
 [mariadb-10.6]
 ```
+
+**Update the docker-compose.yml**
+
+```yml
+version: "3.7"
+services:
+  mariadb:
+    image: docker.io/mariadb:11.8
+    command:
+      - --character-set-server=utf8mb4
+      - --collation-server=utf8mb4_unicode_ci
+      - --skip-character-set-client-handshake
+      - --skip-innodb-read-only-compressed # Temporary fix for MariaDB 10.6
+    environment:
+      MYSQL_ROOT_PASSWORD: 123
+      MARIADB_AUTO_UPGRADE: 1
+    volumes:
+      - mariadb-data:/var/lib/mysql
+      - ./mariadb-cnf/50-server.cnf:/etc/mysql/mariadb.conf.d/50-server.cnf
+```
+
+update below line
+`- ./mariadb-cnf/50-server.cnf:/etc/mysql/mariadb.conf.d/50-server.cnf`
+
